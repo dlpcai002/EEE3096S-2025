@@ -21,7 +21,8 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include <stdint.h>
+#include "stm32f4xx.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -31,7 +32,7 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
-
+#define MAX_ITER 100
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -44,6 +45,12 @@
 /* USER CODE BEGIN PV */
 //TODO: Define variables you think you might need
 // - Performance timing variables (e.g execution time, throughput, pixels per second, clock cycles)
+uint32_t start_time = 0;
+uint32_t end_time = 0;
+uint32_t execution_time = 0;
+uint64_t checksum = 0;
+int width = 128;
+int height = 128;
 
 /* USER CODE END PV */
 
@@ -52,6 +59,8 @@ void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
 /* USER CODE BEGIN PFP */
 //TODO: Define any function prototypes you might need such as the calculate Mandelbrot function among others
+uint64_t calculate_mandelbrot_fixed_point_arithmetic(int width, int height, int max_iterations);
+uint64_t calculate_mandelbrot_double(int width, int height, int max_iterations);
 
 /* USER CODE END PFP */
 
@@ -100,18 +109,41 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-	  //TODO: Visual indicator: Turn on LED0 to signal processing start
+	//TODO: Visual indicator: Turn on LED0 to signal processing start
+	HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0, GPIO_PIN_SET);
+
+	//TODO: Record the start time
+	start_time = HAL_GetTick();
+
+	//TODO: Call the Mandelbrot Function and store the output in the checksum variable defined initially
+	checksum = calculate_mandelbrot_fixed_point_arithmetic(width, height, MAX_ITER);
+
+    //TODO: Record the end time
+	end_time = HAL_GetTick();
 
 
-	  //TODO: Benchmark and Profile Performance
+	//TODO: Calculate the execution time
+
+	execution_time = end_time - start_time;
 
 
-	  //TODO: Visual indicator: Turn on LED1 to signal processing start
+	//TODO: Turn on LED 1 to signify the end of the operation
+
+	HAL_GPIO_WritePin(GPIOB, GPIO_PIN_1, GPIO_PIN_SET);
 
 
-	  //TODO: Keep the LEDs ON for 2s
+	//TODO: Hold the LEDs on for a 2s delay
 
-	  //TODO: Turn OFF LEDs
+	HAL_Delay(2000);
+
+
+	//TODO: Turn off the LEDs
+
+	HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0, GPIO_PIN_RESET);
+
+	HAL_GPIO_WritePin(GPIOB, GPIO_PIN_1, GPIO_PIN_RESET);
+
+
   }
   /* USER CODE END 3 */
 }
@@ -199,6 +231,74 @@ static void MX_GPIO_Init(void)
 
 /* USER CODE BEGIN 4 */
 //TODO: Function signatures you defined previously , implement them here
+uint64_t calculate_mandelbrot_fixed_point_arithmetic(int width, int height, int max_iterations){
+  uint64_t mandelbrot_sum = 0;
+    //TODO: Complete the function implementation
+    int x0, xi;
+    int y0, yi;
+    int temp;
+    int iterations;
+
+	#define FixedShift 12
+	#define fixed_1 (1 << FixedShift)
+
+    for (int y = 0; y < height; y++) {
+    	y0 = ((y * (2 * fixed_1)) / height) - (fixed_1 * 1);
+    	for (int x = 0; x < width; x++){
+    		x0 = ((x * (3.5 * fixed_1)) / width) - (fixed_1 * 2.5);
+
+
+    		xi = 0;
+    		yi = 0;
+
+    		iterations = 0;
+
+    		while ((iterations < max_iterations) && (((xi * xi) >> FixedShift) + ((yi * yi) >> FixedShift) < (4 << FixedShift))) {
+    			temp = ((xi * xi) >> FixedShift) - ((yi * yi) >> FixedShift) + x0;
+    			yi = (((2 * xi * yi) >> FixedShift) + y0);
+    			xi = temp;
+    			iterations++;
+    		}
+
+    		mandelbrot_sum += iterations;
+    	}
+    }
+
+    return mandelbrot_sum;
+
+}
+
+//TODO: Mandelbroat using variable type double
+uint64_t calculate_mandelbrot_double(int width, int height, int max_iterations){
+    uint64_t mandelbrot_sum = 0;
+    //TODO: Complete the function implementation
+    double x0, xi;
+    double y0, yi;
+    double temp;
+    int iterations;
+
+    for (int y = 0; y < height; y++) {
+    	for (int x = 0; x < width; x++){
+    		x0 = ((x / (double)width) * 3.5) - 2.5;
+       		y0 = ((y / (double)height) * 2.0) - 1.0;
+
+       		xi = 0.0;
+       		yi = 0.0;
+
+       		iterations = 0;
+
+       		while ((iterations < max_iterations) && ((xi * xi + yi * yi) < 4.0)) {
+       			temp = (xi * xi) - (yi * yi);
+       			yi = (2.0* xi * yi) + y0;
+       			xi = temp + x0;
+       			iterations++;
+       		}
+
+       		mandelbrot_sum +=iterations;
+       }
+    }
+    return mandelbrot_sum;
+}
 
 /* USER CODE END 4 */
 
@@ -232,3 +332,4 @@ void assert_failed(uint8_t *file, uint32_t line)
   /* USER CODE END 6 */
 }
 #endif /* USE_FULL_ASSERT */
+
