@@ -23,6 +23,7 @@
 /* USER CODE BEGIN Includes */
 #include <stdint.h>
 #include "stm32f4xx.h"
+#include "core_cm4.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -49,8 +50,12 @@ uint32_t start_time = 0;
 uint32_t end_time = 0;
 uint32_t execution_time = 0;
 uint64_t checksum = 0;
-int width = 128;
-int height = 128;
+uint32_t cpuCycles = 0;
+uint64_t totalPixels = 0;
+double executionSec = 0;
+double throughput = 0;
+int width = 265;
+int height = 265;
 
 /* USER CODE END PV */
 
@@ -99,7 +104,9 @@ int main(void)
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
   /* USER CODE BEGIN 2 */
-
+  CoreDebug->DEMCR |= CoreDebug_DEMCR_TRCENA_Msk;
+  DWT->CYCCNT = 0;
+  DWT->CTRL |= DWT_CTRL_CYCCNTENA_Msk;
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -112,6 +119,7 @@ int main(void)
 	//TODO: Visual indicator: Turn on LED0 to signal processing start
 	HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0, GPIO_PIN_SET);
 
+	DWT->CYCCNT = 0;
 	//TODO: Record the start time
 	start_time = HAL_GetTick();
 
@@ -121,12 +129,14 @@ int main(void)
     //TODO: Record the end time
 	end_time = HAL_GetTick();
 
-
+	cpuCycles = DWT->CYCCNT;
 	//TODO: Calculate the execution time
 
 	execution_time = end_time - start_time;
 
-
+	totalPixels = (uint64_t)width * height;
+	executionSec = (double)execution_time / 1000.0;
+	throughput = (double)totalPixels/executionSec;
 	//TODO: Turn on LED 1 to signify the end of the operation
 
 	HAL_GPIO_WritePin(GPIOB, GPIO_PIN_1, GPIO_PIN_SET);

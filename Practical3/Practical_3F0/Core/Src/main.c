@@ -23,6 +23,7 @@
 /* USER CODE BEGIN Includes */
 #include <stdint.h>
 #include "stm32f0xx.h"
+#include "stm32f0xx_hal_tim.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -49,6 +50,10 @@ uint32_t start_time = 0;
 uint32_t end_time = 0;
 uint32_t execution_time = 0;
 uint64_t checksum = 0;
+uint32_t cpuCycles = 0;
+uint64_t totalPixels = 0;
+double executionSec = 0;
+double throughput = 0;
 int width = 265;
 int height = 265;
 /* USER CODE END PV */
@@ -98,7 +103,6 @@ int main(void)
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
   /* USER CODE BEGIN 2 */
-
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -112,8 +116,10 @@ int main(void)
 	  //TODO: Turn on LED 0 to signify the start of the operation
 	    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0, GPIO_PIN_SET);
 
+
 	    //TODO: Record the start time
 	    start_time = HAL_GetTick();
+
 
 	    //TODO: Call the Mandelbrot Function and store the output in the checksum variable defined initially
 	    checksum = calculate_mandelbrot_fixed_point_arithmetic(width, height, MAX_ITER);
@@ -127,6 +133,9 @@ int main(void)
 	    //TODO: Turn on LED 1 to signify the end of the operation
 	    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_1, GPIO_PIN_SET);
 
+	    totalPixels = (uint64_t)width * height;
+	    executionSec = (double)execution_time / 1000.0;
+	    throughput = (double)totalPixels/executionSec;
 	    //TODO: Hold the LEDs on for a 1s delay
 	    HAL_Delay(2000);
 
