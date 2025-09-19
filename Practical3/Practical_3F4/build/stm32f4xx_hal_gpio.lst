@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\admin\AppData\Local\Temp\cctPgfr8.s 			page 1
+ARM GAS  C:\Users\admin\AppData\Local\Temp\ccCUSZ8p.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\admin\AppData\Local\Temp\cctPgfr8.s 			page 1
   29:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c ****   in several modes:
   30:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c ****   (+) Input mode 
   31:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c ****   (+) Analog mode
-ARM GAS  C:\Users\admin\AppData\Local\Temp\cctPgfr8.s 			page 2
+ARM GAS  C:\Users\admin\AppData\Local\Temp\ccCUSZ8p.s 			page 2
 
 
   32:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c ****   (+) Output mode
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\admin\AppData\Local\Temp\cctPgfr8.s 			page 1
   86:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c ****         HAL_GPIO_WritePin()/HAL_GPIO_TogglePin().
   87:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c ****     
   88:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c ****     (#) To lock pin configuration until next reset use HAL_GPIO_LockPin().
-ARM GAS  C:\Users\admin\AppData\Local\Temp\cctPgfr8.s 			page 3
+ARM GAS  C:\Users\admin\AppData\Local\Temp\ccCUSZ8p.s 			page 3
 
 
   89:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c **** 
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\admin\AppData\Local\Temp\cctPgfr8.s 			page 1
  143:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c **** @verbatim    
  144:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c ****  ===============================================================================
  145:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c ****               ##### Initialization and de-initialization functions #####
-ARM GAS  C:\Users\admin\AppData\Local\Temp\cctPgfr8.s 			page 4
+ARM GAS  C:\Users\admin\AppData\Local\Temp\ccCUSZ8p.s 			page 4
 
 
  146:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c ****  ===============================================================================
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\admin\AppData\Local\Temp\cctPgfr8.s 			page 1
   49              		.cfi_def_cfa_offset 12
   50              		.cfi_offset 4, -12
   51              		.cfi_offset 5, -8
-ARM GAS  C:\Users\admin\AppData\Local\Temp\cctPgfr8.s 			page 5
+ARM GAS  C:\Users\admin\AppData\Local\Temp\ccCUSZ8p.s 			page 5
 
 
   52              		.cfi_offset 14, -4
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\admin\AppData\Local\Temp\cctPgfr8.s 			page 1
  200:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c ****         temp = GPIOx->OTYPER;
   84              		.loc 1 200 9 is_stmt 1 view .LVU25
   85              		.loc 1 200 14 is_stmt 0 view .LVU26
-ARM GAS  C:\Users\admin\AppData\Local\Temp\cctPgfr8.s 			page 6
+ARM GAS  C:\Users\admin\AppData\Local\Temp\ccCUSZ8p.s 			page 6
 
 
   86 0028 4468     		ldr	r4, [r0, #4]
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\admin\AppData\Local\Temp\cctPgfr8.s 			page 1
  116              	.LVL11:
  225:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c ****         temp &= ~(0xFU << ((uint32_t)(position & 0x07U) * 4U)) ;
  117              		.loc 1 225 9 is_stmt 1 view .LVU40
-ARM GAS  C:\Users\admin\AppData\Local\Temp\cctPgfr8.s 			page 7
+ARM GAS  C:\Users\admin\AppData\Local\Temp\ccCUSZ8p.s 			page 7
 
 
  118              		.loc 1 225 28 is_stmt 0 view .LVU41
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\admin\AppData\Local\Temp\cctPgfr8.s 			page 1
  152 006e 2A43     		orrs	r2, r2, r5
  153              	.LVL15:
  246:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c ****         SYSCFG->EXTICR[position >> 2U] = temp;
-ARM GAS  C:\Users\admin\AppData\Local\Temp\cctPgfr8.s 			page 8
+ARM GAS  C:\Users\admin\AppData\Local\Temp\ccCUSZ8p.s 			page 8
 
 
  154              		.loc 1 246 9 is_stmt 1 view .LVU55
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\admin\AppData\Local\Temp\cctPgfr8.s 			page 1
  195              		.loc 1 259 11 is_stmt 0 view .LVU74
  196 009c D1F804E0 		ldr	lr, [r1, #4]
  197 00a0 1EF4001F 		tst	lr, #2097152
-ARM GAS  C:\Users\admin\AppData\Local\Temp\cctPgfr8.s 			page 9
+ARM GAS  C:\Users\admin\AppData\Local\Temp\ccCUSZ8p.s 			page 9
 
 
  198 00a4 01D0     		beq	.L9
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\admin\AppData\Local\Temp\cctPgfr8.s 			page 1
  236 00c8 2240     		ands	r2, r2, r4
  237              	.LVL27:
  276:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c ****         if((GPIO_Init->Mode & EXTI_IT) != 0x00U)
-ARM GAS  C:\Users\admin\AppData\Local\Temp\cctPgfr8.s 			page 10
+ARM GAS  C:\Users\admin\AppData\Local\Temp\ccCUSZ8p.s 			page 10
 
 
  238              		.loc 1 276 9 is_stmt 1 view .LVU93
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\admin\AppData\Local\Temp\cctPgfr8.s 			page 1
  278              		.loc 1 188 7 is_stmt 1 view .LVU109
  188:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c ****           (GPIO_Init->Mode & GPIO_MODE) == MODE_AF)
  279              		.loc 1 188 21 is_stmt 0 view .LVU110
-ARM GAS  C:\Users\admin\AppData\Local\Temp\cctPgfr8.s 			page 11
+ARM GAS  C:\Users\admin\AppData\Local\Temp\ccCUSZ8p.s 			page 11
 
 
  280 00f0 4C68     		ldr	r4, [r1, #4]
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\admin\AppData\Local\Temp\cctPgfr8.s 			page 1
  214:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c ****         GPIOx->PUPDR = temp;
  317              		.loc 1 214 14 view .LVU128
  318 0116 2243     		orrs	r2, r2, r4
-ARM GAS  C:\Users\admin\AppData\Local\Temp\cctPgfr8.s 			page 12
+ARM GAS  C:\Users\admin\AppData\Local\Temp\ccCUSZ8p.s 			page 12
 
 
  319              	.LVL37:
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\admin\AppData\Local\Temp\cctPgfr8.s 			page 1
  356              	.LVL41:
  234:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c **** 
  357              		.loc 1 234 7 is_stmt 1 view .LVU146
-ARM GAS  C:\Users\admin\AppData\Local\Temp\cctPgfr8.s 			page 13
+ARM GAS  C:\Users\admin\AppData\Local\Temp\ccCUSZ8p.s 			page 13
 
 
  234:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c **** 
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\admin\AppData\Local\Temp\cctPgfr8.s 			page 1
  244:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c ****         temp |= ((uint32_t)(GPIO_GET_INDEX(GPIOx)) << (4U * (position & 0x03U)));
  397              		.loc 1 244 32 view .LVU162
  398 0170 4FEA8E0E 		lsl	lr, lr, #2
-ARM GAS  C:\Users\admin\AppData\Local\Temp\cctPgfr8.s 			page 14
+ARM GAS  C:\Users\admin\AppData\Local\Temp\ccCUSZ8p.s 			page 14
 
 
  244:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c ****         temp |= ((uint32_t)(GPIO_GET_INDEX(GPIOx)) << (4U * (position & 0x03U)));
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\admin\AppData\Local\Temp\cctPgfr8.s 			page 1
  245:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c ****         SYSCFG->EXTICR[position >> 2U] = temp;
  441              		.loc 1 245 29 discriminator 4 view .LVU175
  442 01be 54E7     		b	.L7
-ARM GAS  C:\Users\admin\AppData\Local\Temp\cctPgfr8.s 			page 15
+ARM GAS  C:\Users\admin\AppData\Local\Temp\ccCUSZ8p.s 			page 15
 
 
  443              	.LVL47:
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\admin\AppData\Local\Temp\cctPgfr8.s 			page 1
  490              		.syntax unified
  491              		.thumb
  492              		.thumb_func
-ARM GAS  C:\Users\admin\AppData\Local\Temp\cctPgfr8.s 			page 16
+ARM GAS  C:\Users\admin\AppData\Local\Temp\ccCUSZ8p.s 			page 16
 
 
  494              	HAL_GPIO_DeInit:
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\admin\AppData\Local\Temp\cctPgfr8.s 			page 1
  307:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c ****     /* Get the IO position */
  308:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c ****     ioposition = 0x01U << position;
  309:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c ****     /* Get the current IO position */
-ARM GAS  C:\Users\admin\AppData\Local\Temp\cctPgfr8.s 			page 17
+ARM GAS  C:\Users\admin\AppData\Local\Temp\ccCUSZ8p.s 			page 17
 
 
  310:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c ****     iocurrent = (GPIO_Pin) & ioposition;
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\admin\AppData\Local\Temp\cctPgfr8.s 			page 1
  551              		.loc 1 337 17 is_stmt 0 view .LVU202
  552 002c 4FEAD30E 		lsr	lr, r3, #3
  553 0030 0EF1080E 		add	lr, lr, #8
-ARM GAS  C:\Users\admin\AppData\Local\Temp\cctPgfr8.s 			page 18
+ARM GAS  C:\Users\admin\AppData\Local\Temp\ccCUSZ8p.s 			page 18
 
 
  554 0034 50F82E40 		ldr	r4, [r0, lr, lsl #2]
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\admin\AppData\Local\Temp\cctPgfr8.s 			page 1
  595              		.loc 1 308 16 is_stmt 0 view .LVU220
  596 0068 0122     		movs	r2, #1
  597 006a 9A40     		lsls	r2, r2, r3
-ARM GAS  C:\Users\admin\AppData\Local\Temp\cctPgfr8.s 			page 19
+ARM GAS  C:\Users\admin\AppData\Local\Temp\ccCUSZ8p.s 			page 19
 
 
  598              	.LVL57:
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\admin\AppData\Local\Temp\cctPgfr8.s 			page 1
  636 00a2 05F58065 		add	r5, r5, #1024
  637 00a6 A842     		cmp	r0, r5
  638 00a8 13D0     		beq	.L38
-ARM GAS  C:\Users\admin\AppData\Local\Temp\cctPgfr8.s 			page 20
+ARM GAS  C:\Users\admin\AppData\Local\Temp\ccCUSZ8p.s 			page 20
 
 
  317:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c ****       {
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\admin\AppData\Local\Temp\cctPgfr8.s 			page 1
  681 00e2 104C     		ldr	r4, .L50+8
  682              	.LVL61:
  320:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c ****         EXTI->EMR &= ~((uint32_t)iocurrent);
-ARM GAS  C:\Users\admin\AppData\Local\Temp\cctPgfr8.s 			page 21
+ARM GAS  C:\Users\admin\AppData\Local\Temp\ccCUSZ8p.s 			page 21
 
 
  683              		.loc 1 320 13 view .LVU249
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\admin\AppData\Local\Temp\cctPgfr8.s 			page 1
  348:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c ****   }
  349:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c **** }
  721              		.loc 1 349 1 view .LVU265
-ARM GAS  C:\Users\admin\AppData\Local\Temp\cctPgfr8.s 			page 22
+ARM GAS  C:\Users\admin\AppData\Local\Temp\ccCUSZ8p.s 			page 22
 
 
  722 0118 F0BD     		pop	{r4, r5, r6, r7, pc}
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\admin\AppData\Local\Temp\cctPgfr8.s 			page 1
  375:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c **** GPIO_PinState HAL_GPIO_ReadPin(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin)
  376:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c **** {
  753              		.loc 1 376 1 is_stmt 1 view -0
-ARM GAS  C:\Users\admin\AppData\Local\Temp\cctPgfr8.s 			page 23
+ARM GAS  C:\Users\admin\AppData\Local\Temp\ccCUSZ8p.s 			page 23
 
 
  754              		.cfi_startproc
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\admin\AppData\Local\Temp\cctPgfr8.s 			page 1
  395:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c ****   *
  396:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c ****   * @note   This function uses GPIOx_BSRR register to allow atomic read/modify
  397:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c ****   *         accesses. In this way, there is no risk of an IRQ occurring between
-ARM GAS  C:\Users\admin\AppData\Local\Temp\cctPgfr8.s 			page 24
+ARM GAS  C:\Users\admin\AppData\Local\Temp\ccCUSZ8p.s 			page 24
 
 
  398:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c ****   *         the read and the modify access.
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\admin\AppData\Local\Temp\cctPgfr8.s 			page 1
  820              		.global	HAL_GPIO_TogglePin
  821              		.syntax unified
  822              		.thumb
-ARM GAS  C:\Users\admin\AppData\Local\Temp\cctPgfr8.s 			page 25
+ARM GAS  C:\Users\admin\AppData\Local\Temp\ccCUSZ8p.s 			page 25
 
 
  823              		.thumb_func
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\admin\AppData\Local\Temp\cctPgfr8.s 			page 1
  858              		.thumb
  859              		.thumb_func
  861              	HAL_GPIO_LockPin:
-ARM GAS  C:\Users\admin\AppData\Local\Temp\cctPgfr8.s 			page 26
+ARM GAS  C:\Users\admin\AppData\Local\Temp\ccCUSZ8p.s 			page 26
 
 
  862              	.LVL75:
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\admin\AppData\Local\Temp\cctPgfr8.s 			page 1
  472:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c ****   GPIOx->LCKR = tmp;
  890              		.loc 1 472 3 is_stmt 1 view .LVU311
  891              		.loc 1 472 15 is_stmt 0 view .LVU312
-ARM GAS  C:\Users\admin\AppData\Local\Temp\cctPgfr8.s 			page 27
+ARM GAS  C:\Users\admin\AppData\Local\Temp\ccCUSZ8p.s 			page 27
 
 
  892 0014 019B     		ldr	r3, [sp, #4]
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\admin\AppData\Local\Temp\cctPgfr8.s 			page 1
  932              		.thumb
  933              		.thumb_func
  935              	HAL_GPIO_EXTI_Callback:
-ARM GAS  C:\Users\admin\AppData\Local\Temp\cctPgfr8.s 			page 28
+ARM GAS  C:\Users\admin\AppData\Local\Temp\ccCUSZ8p.s 			page 28
 
 
  936              	.LVL79:
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\admin\AppData\Local\Temp\cctPgfr8.s 			page 1
  962              		@ frame_needed = 0, uses_anonymous_args = 0
  493:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c ****   /* EXTI line interrupt detected */
  963              		.loc 1 493 1 is_stmt 0 view .LVU327
-ARM GAS  C:\Users\admin\AppData\Local\Temp\cctPgfr8.s 			page 29
+ARM GAS  C:\Users\admin\AppData\Local\Temp\ccCUSZ8p.s 			page 29
 
 
  964 0000 08B5     		push	{r3, lr}
@@ -1728,29 +1728,29 @@ ARM GAS  C:\Users\admin\AppData\Local\Temp\cctPgfr8.s 			page 1
  1002              		.file 5 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h"
  1003              		.file 6 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h"
  1004              		.file 7 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h"
-ARM GAS  C:\Users\admin\AppData\Local\Temp\cctPgfr8.s 			page 30
+ARM GAS  C:\Users\admin\AppData\Local\Temp\ccCUSZ8p.s 			page 30
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 stm32f4xx_hal_gpio.c
-C:\Users\admin\AppData\Local\Temp\cctPgfr8.s:19     .text.HAL_GPIO_Init:00000000 $t
-C:\Users\admin\AppData\Local\Temp\cctPgfr8.s:25     .text.HAL_GPIO_Init:00000000 HAL_GPIO_Init
-C:\Users\admin\AppData\Local\Temp\cctPgfr8.s:480    .text.HAL_GPIO_Init:000001d8 $d
-C:\Users\admin\AppData\Local\Temp\cctPgfr8.s:488    .text.HAL_GPIO_DeInit:00000000 $t
-C:\Users\admin\AppData\Local\Temp\cctPgfr8.s:494    .text.HAL_GPIO_DeInit:00000000 HAL_GPIO_DeInit
-C:\Users\admin\AppData\Local\Temp\cctPgfr8.s:737    .text.HAL_GPIO_DeInit:0000011c $d
-C:\Users\admin\AppData\Local\Temp\cctPgfr8.s:744    .text.HAL_GPIO_ReadPin:00000000 $t
-C:\Users\admin\AppData\Local\Temp\cctPgfr8.s:750    .text.HAL_GPIO_ReadPin:00000000 HAL_GPIO_ReadPin
-C:\Users\admin\AppData\Local\Temp\cctPgfr8.s:783    .text.HAL_GPIO_WritePin:00000000 $t
-C:\Users\admin\AppData\Local\Temp\cctPgfr8.s:789    .text.HAL_GPIO_WritePin:00000000 HAL_GPIO_WritePin
-C:\Users\admin\AppData\Local\Temp\cctPgfr8.s:819    .text.HAL_GPIO_TogglePin:00000000 $t
-C:\Users\admin\AppData\Local\Temp\cctPgfr8.s:825    .text.HAL_GPIO_TogglePin:00000000 HAL_GPIO_TogglePin
-C:\Users\admin\AppData\Local\Temp\cctPgfr8.s:855    .text.HAL_GPIO_LockPin:00000000 $t
-C:\Users\admin\AppData\Local\Temp\cctPgfr8.s:861    .text.HAL_GPIO_LockPin:00000000 HAL_GPIO_LockPin
-C:\Users\admin\AppData\Local\Temp\cctPgfr8.s:929    .text.HAL_GPIO_EXTI_Callback:00000000 $t
-C:\Users\admin\AppData\Local\Temp\cctPgfr8.s:935    .text.HAL_GPIO_EXTI_Callback:00000000 HAL_GPIO_EXTI_Callback
-C:\Users\admin\AppData\Local\Temp\cctPgfr8.s:950    .text.HAL_GPIO_EXTI_IRQHandler:00000000 $t
-C:\Users\admin\AppData\Local\Temp\cctPgfr8.s:956    .text.HAL_GPIO_EXTI_IRQHandler:00000000 HAL_GPIO_EXTI_IRQHandler
-C:\Users\admin\AppData\Local\Temp\cctPgfr8.s:993    .text.HAL_GPIO_EXTI_IRQHandler:00000018 $d
+C:\Users\admin\AppData\Local\Temp\ccCUSZ8p.s:19     .text.HAL_GPIO_Init:00000000 $t
+C:\Users\admin\AppData\Local\Temp\ccCUSZ8p.s:25     .text.HAL_GPIO_Init:00000000 HAL_GPIO_Init
+C:\Users\admin\AppData\Local\Temp\ccCUSZ8p.s:480    .text.HAL_GPIO_Init:000001d8 $d
+C:\Users\admin\AppData\Local\Temp\ccCUSZ8p.s:488    .text.HAL_GPIO_DeInit:00000000 $t
+C:\Users\admin\AppData\Local\Temp\ccCUSZ8p.s:494    .text.HAL_GPIO_DeInit:00000000 HAL_GPIO_DeInit
+C:\Users\admin\AppData\Local\Temp\ccCUSZ8p.s:737    .text.HAL_GPIO_DeInit:0000011c $d
+C:\Users\admin\AppData\Local\Temp\ccCUSZ8p.s:744    .text.HAL_GPIO_ReadPin:00000000 $t
+C:\Users\admin\AppData\Local\Temp\ccCUSZ8p.s:750    .text.HAL_GPIO_ReadPin:00000000 HAL_GPIO_ReadPin
+C:\Users\admin\AppData\Local\Temp\ccCUSZ8p.s:783    .text.HAL_GPIO_WritePin:00000000 $t
+C:\Users\admin\AppData\Local\Temp\ccCUSZ8p.s:789    .text.HAL_GPIO_WritePin:00000000 HAL_GPIO_WritePin
+C:\Users\admin\AppData\Local\Temp\ccCUSZ8p.s:819    .text.HAL_GPIO_TogglePin:00000000 $t
+C:\Users\admin\AppData\Local\Temp\ccCUSZ8p.s:825    .text.HAL_GPIO_TogglePin:00000000 HAL_GPIO_TogglePin
+C:\Users\admin\AppData\Local\Temp\ccCUSZ8p.s:855    .text.HAL_GPIO_LockPin:00000000 $t
+C:\Users\admin\AppData\Local\Temp\ccCUSZ8p.s:861    .text.HAL_GPIO_LockPin:00000000 HAL_GPIO_LockPin
+C:\Users\admin\AppData\Local\Temp\ccCUSZ8p.s:929    .text.HAL_GPIO_EXTI_Callback:00000000 $t
+C:\Users\admin\AppData\Local\Temp\ccCUSZ8p.s:935    .text.HAL_GPIO_EXTI_Callback:00000000 HAL_GPIO_EXTI_Callback
+C:\Users\admin\AppData\Local\Temp\ccCUSZ8p.s:950    .text.HAL_GPIO_EXTI_IRQHandler:00000000 $t
+C:\Users\admin\AppData\Local\Temp\ccCUSZ8p.s:956    .text.HAL_GPIO_EXTI_IRQHandler:00000000 HAL_GPIO_EXTI_IRQHandler
+C:\Users\admin\AppData\Local\Temp\ccCUSZ8p.s:993    .text.HAL_GPIO_EXTI_IRQHandler:00000018 $d
 
 NO UNDEFINED SYMBOLS

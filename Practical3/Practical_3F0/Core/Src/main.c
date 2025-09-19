@@ -251,7 +251,7 @@ uint64_t calculate_mandelbrot_fixed_point_arithmetic(int width, int height, int 
     int temp;
     int iterations;
 
-	#define FixedShift 12
+	#define FixedShift 16
 	#define fixed_1 (1 << FixedShift)
 
     for (int y = 0; y < height; y++) {

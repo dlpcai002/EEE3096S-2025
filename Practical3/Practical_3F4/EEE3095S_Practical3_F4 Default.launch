@@ -73,7 +73,7 @@
     <stringAttribute key="org.eclipse.cdt.launch.PROGRAM_NAME" value="build/Practical_3F4.elf"/>
     <stringAttribute key="org.eclipse.cdt.launch.PROJECT_ATTR" value="EEE3095S_Practical3_F4"/>
     <booleanAttribute key="org.eclipse.cdt.launch.PROJECT_BUILD_CONFIG_AUTO_ATTR" value="true"/>
-    <stringAttribute key="org.eclipse.cdt.launch.PROJECT_BUILD_CONFIG_ID_ATTR" value="com.st.stm32cube.ide.mcu.gnu.managedbuild.toolchain.base.1952596579"/>
+    <stringAttribute key="org.eclipse.cdt.launch.PROJECT_BUILD_CONFIG_ID_ATTR" value="com.st.stm32cube.ide.mcu.gnu.managedbuild.toolchain.base.1238968248"/>
     <booleanAttribute key="org.eclipse.debug.core.ATTR_FORCE_SYSTEM_CONSOLE_ENCODING" value="false"/>
     <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
         <listEntry value="/EEE3095S_Practical3_F4"/>

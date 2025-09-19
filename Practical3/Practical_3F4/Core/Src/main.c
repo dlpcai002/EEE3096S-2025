@@ -50,12 +50,19 @@ uint32_t start_time = 0;
 uint32_t end_time = 0;
 uint32_t execution_time = 0;
 uint64_t checksum = 0;
-uint32_t cpuCycles = 0;
+uint32_t cpuCycle = 0;
 uint64_t totalPixels = 0;
 double executionSec = 0;
 double throughput = 0;
-int width = 265;
-int height = 265;
+int width = 0;
+int height = 0;
+
+int widths[] = {512, 640, 800, 1280, 1920};
+int heights[] = {512, 480, 600, 720, 1080};
+uint32_t execTimes[5];
+uint64_t checksums[5];
+uint32_t cpuCycles[5];
+double throughputs[5];
 
 /* USER CODE END PV */
 
@@ -116,43 +123,56 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-	//TODO: Visual indicator: Turn on LED0 to signal processing start
-	HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0, GPIO_PIN_SET);
 
-	DWT->CYCCNT = 0;
-	//TODO: Record the start time
-	start_time = HAL_GetTick();
+	for (int i = 0; i < 5; i++) {
+		int width = widths[i];
+		int height = heights[i];
 
-	//TODO: Call the Mandelbrot Function and store the output in the checksum variable defined initially
-	checksum = calculate_mandelbrot_fixed_point_arithmetic(width, height, MAX_ITER);
+		//TODO: Visual indicator: Turn on LED0 to signal processing start
+	    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0, GPIO_PIN_SET);
 
-    //TODO: Record the end time
-	end_time = HAL_GetTick();
+		DWT->CYCCNT = 0;
+		//TODO: Record the start time
+		start_time = HAL_GetTick();
 
-	cpuCycles = DWT->CYCCNT;
-	//TODO: Calculate the execution time
+		//TODO: Call the Mandelbrot Function and store the output in the checksum variable defined initially
+		checksum = calculate_mandelbrot_fixed_point_arithmetic(width, height, MAX_ITER);
+		checksums[i] = checksum;
 
-	execution_time = end_time - start_time;
+	    //TODO: Record the end time
+		end_time = HAL_GetTick();
 
-	totalPixels = (uint64_t)width * height;
-	executionSec = (double)execution_time / 1000.0;
-	throughput = (double)totalPixels/executionSec;
-	//TODO: Turn on LED 1 to signify the end of the operation
+		cpuCycle = DWT->CYCCNT;
 
-	HAL_GPIO_WritePin(GPIOB, GPIO_PIN_1, GPIO_PIN_SET);
+		cpuCycles[i] = cpuCycle;
+		//TODO: Calculate the execution time
+
+		execution_time = end_time - start_time;
+		execTimes[i] = execution_time;
+
+		totalPixels = (uint64_t)width * height;
+		executionSec = (double)execution_time / 1000.0;
+		throughput = (double)totalPixels/executionSec;
+
+		throughputs[i] = throughput;
+		//TODO: Turn on LED 1 to signify the end of the operation
+
+		HAL_GPIO_WritePin(GPIOB, GPIO_PIN_1, GPIO_PIN_SET);
 
 
-	//TODO: Hold the LEDs on for a 2s delay
+		//TODO: Hold the LEDs on for a 2s delay
 
-	HAL_Delay(2000);
+		HAL_Delay(2000);
 
 
-	//TODO: Turn off the LEDs
+		//TODO: Turn off the LEDs
 
-	HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0, GPIO_PIN_RESET);
+		HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0, GPIO_PIN_RESET);
 
-	HAL_GPIO_WritePin(GPIOB, GPIO_PIN_1, GPIO_PIN_RESET);
+		HAL_GPIO_WritePin(GPIOB, GPIO_PIN_1, GPIO_PIN_RESET);
 
+
+	}
 
   }
   /* USER CODE END 3 */
