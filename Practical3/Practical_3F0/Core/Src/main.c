@@ -54,8 +54,14 @@ uint32_t cpuCycles = 0;
 uint64_t totalPixels = 0;
 double executionSec = 0;
 double throughput = 0;
-int width = 265;
-int height = 265;
+int width = 0;
+int height = 0;
+
+int widths[] = {128, 160, 192, 224, 265};
+int heights[] = {128, 160, 192, 224, 265};
+volatile uint32_t execTimes[5];
+volatile uint64_t checksums[5];
+volatile double throughputs[5];
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -113,36 +119,42 @@ int main(void)
 
     /* USER CODE BEGIN 3 */
 
-	  //TODO: Turn on LED 0 to signify the start of the operation
-	    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0, GPIO_PIN_SET);
+	  for (int i = 0; i < 5; i++) {
+		  int width = widths[i];
+		  int height = heights[i];
+
+		  //TODO: Turn on LED 0 to signify the start of the operation
+		  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0, GPIO_PIN_SET);
 
 
-	    //TODO: Record the start time
-	    start_time = HAL_GetTick();
+		  //TODO: Record the start time
+		  start_time = HAL_GetTick();
 
 
-	    //TODO: Call the Mandelbrot Function and store the output in the checksum variable defined initially
-	    checksum = calculate_mandelbrot_fixed_point_arithmetic(width, height, MAX_ITER);
+		  //TODO: Call the Mandelbrot Function and store the output in the checksum variable defined initially
+		   checksum = calculate_mandelbrot_fixed_point_arithmetic(width, height, MAX_ITER);
+		   checksums[i] = checksum;
+		  //TODO: Record the end time
 
-	    //TODO: Record the end time
+		  end_time = HAL_GetTick();
+		  //TODO: Calculate the execution time
+		  execution_time = end_time - start_time;
+		  execTimes[i] = execution_time;
 
-	    end_time = HAL_GetTick();
-	    //TODO: Calculate the execution time
-	    execution_time = end_time - start_time;
+		  //TODO: Turn on LED 1 to signify the end of the operation
+		  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_1, GPIO_PIN_SET);
 
-	    //TODO: Turn on LED 1 to signify the end of the operation
-	    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_1, GPIO_PIN_SET);
+		  totalPixels = (uint64_t)width * height;
+		  executionSec = (double)execution_time / 1000.0;
+		  throughput = (double)totalPixels/executionSec;
+		  throughputs[i] = throughput;
+		  //TODO: Hold the LEDs on for a 1s delay
+		  HAL_Delay(2000);
 
-	    totalPixels = (uint64_t)width * height;
-	    executionSec = (double)execution_time / 1000.0;
-	    throughput = (double)totalPixels/executionSec;
-	    //TODO: Hold the LEDs on for a 1s delay
-	    HAL_Delay(2000);
-
-	    //TODO: Turn off the LEDs
-	    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0, GPIO_PIN_RESET);
-	    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_1, GPIO_PIN_RESET);
-
+		  //TODO: Turn off the LEDs
+		  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0, GPIO_PIN_RESET);
+		  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_1, GPIO_PIN_RESET);
+	  }
 
   }
   /* USER CODE END 3 */
