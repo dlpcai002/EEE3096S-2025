@@ -57,8 +57,8 @@ double throughput = 0;
 int width = 0;
 int height = 0;
 
-int widths[] = {512, 640, 800, 1280, 1920};
-int heights[] = {512, 480, 600, 720, 1080};
+int widths[] = {128, 160, 192, 224, 265};
+int heights[] = {128, 160, 192, 224, 265};
 uint32_t execTimes[5];
 uint64_t checksums[5];
 uint32_t cpuCycles[5];
@@ -269,7 +269,7 @@ uint64_t calculate_mandelbrot_fixed_point_arithmetic(int width, int height, int 
     int temp;
     int iterations;
 
-	#define FixedShift 12
+	#define FixedShift 16
 	#define fixed_1 (1 << FixedShift)
 
     for (int y = 0; y < height; y++) {
